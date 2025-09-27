@@ -14,7 +14,7 @@ import plotly.express as px
 # ================================
 @st.cache_data
 def load_data():
-    df = pd.read_excel("online retail.xlsx", engine="openpyxl")  # pastikan nama file benar
+    df = pd.read_excel("Online Retail.xlsx", engine="openpyxl")
     df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
     df["Revenue"] = df["Quantity"] * df["UnitPrice"]
     df["YearMonth"] = df["InvoiceDate"].dt.to_period("M").astype(str)
