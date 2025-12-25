@@ -10,12 +10,10 @@ df = None
 def load_data():
     global df
     if df is None:
-        # Path to public/data.parquet from api/index.py
-        # root/
-        #   api/index.py
-        #   public/data.parquet
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        data_path = os.path.join(base_dir, 'public', 'data.parquet')
+        # Path to data.parquet relative to api/index.py
+        # Vercel bundles files in the same directory
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        data_path = os.path.join(base_dir, 'data.parquet')
         
         if os.path.exists(data_path):
             try:

@@ -3,7 +3,7 @@ import os
 
 def convert_data():
     input_file = "Online Retail.xlsx"
-    output_dir = "public"
+    output_dir = "api"
     output_file = os.path.join(output_dir, "data.parquet")
 
     if not os.path.exists(output_dir):
